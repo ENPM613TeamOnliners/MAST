@@ -1,4 +1,4 @@
-# mast
+# MAST
 
 ## Project setup
 ```
@@ -27,3 +27,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Setting up AWS Cognito do the following steps:
+https://sanaulla.info/2019/04/20/integrating-amazon-cognito-with-single-page-application-vue-js/
