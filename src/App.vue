@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <v-app>
     <v-app-bar app dark>
       <v-app-bar-nav-icon  @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -21,10 +22,19 @@
       <router-view />
     </v-content>
   </v-app>
+=======
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <div class="contents">
+      <router-view/>
+    </div>
+  </div>
+>>>>>>> dee4a56f5b66fd6d0427c45e3b7e497d5f73ec0c
 </template>
 
 <script>
 export default {
+<<<<<<< HEAD
   name: "App",
 
   data: () => ({
@@ -32,3 +42,19 @@ export default {
   })
 };
 </script>
+=======
+  name: 'app'
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
+>>>>>>> dee4a56f5b66fd6d0427c45e3b7e497d5f73ec0c

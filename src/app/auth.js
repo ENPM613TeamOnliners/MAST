@@ -1,6 +1,10 @@
 /* eslint-disable */
 import { CognitoAuth, StorageHelper } from 'amazon-cognito-auth-js';
+<<<<<<< HEAD
 import IndexRouter from '../router';
+=======
+import IndexRouter from '../router/index';
+>>>>>>> dee4a56f5b66fd6d0427c45e3b7e497d5f73ec0c
 import UserInfoStore from './user-info-store';
 import UserInfoApi from './user-info-api';
 
