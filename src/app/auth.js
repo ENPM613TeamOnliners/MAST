@@ -13,12 +13,12 @@ const REDIRECT_URI_SIGNOUT = process.env.VUE_APP_COGNITO_REDIRECT_URI_SIGNOUT;
 const APP_URL = process.env.VUE_APP_APP_URL;
 
 var authData = {
-    ClientId: '6sdbss5c41ruofvbo633pv59hv', // Your client id here
+    ClientId: 'vg0j0h1m24plent1522ek1bak', // Your client id here
     AppWebDomain: 'mast.auth.us-east-1.amazoncognito.com',
     TokenScopesArray: ['openid', 'email'],
     RedirectUriSignIn: 'http://localhost:8080/login/oauth2/code/cognito',
     RedirectUriSignOut: 'http://localhost:8080/logout',
-    UserPoolId: 'us-east-1_csv2V85J5',
+    UserPoolId: 'us-east-1_CZlkVQWxP',
 }
 
 var auth = new CognitoAuth(authData);
