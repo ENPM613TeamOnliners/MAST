@@ -7,7 +7,7 @@ npm install
 ```
 
 ### Compiles and hot-reloads for development
-To run locally use npm run serve and go to http://localhost:8080 with the browser of your choice.
+To run locally use npm run serve from your terminal and go to http://localhost:8080 with the browser of your choice.
 ```
 npm run serve
 ```
