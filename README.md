@@ -1,7 +1,7 @@
 # MAST
 
 ## Project setup
-Go to MAST then run npm install to install all dependencies.
+Go to MAST then run npm install to install all dependencies from your terminal.
 ```
 npm install
 ```
