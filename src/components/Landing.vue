@@ -39,8 +39,8 @@
           </v-card-text>
         </v-card>
       </v-tab-item>
+      
       <v-tab-item>
-          
         <v-card flat>
           <v-card-text>
             <About />
@@ -56,7 +56,7 @@ import About from "@/views/About.vue";
 export default {
   name: "Landing",
   components: {
-    About
+    About,
   }
 };
 </script>
