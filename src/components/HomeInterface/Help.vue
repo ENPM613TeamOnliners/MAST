@@ -1,6 +1,13 @@
 <template>
   <v-container>
-    <h3 class="text-uppercase">This is the help page view!</h3>
+    <h1 class="text-uppercase">MAST Documentation</h1>
+    <br>
+    <a href="">How to Enroll in a course.</a>
+    <br>
+    <a href="">How to view a course.</a>
+    <br>
+    <a href="">How to view your account.</a>
+
   </v-container>
 </template>
 

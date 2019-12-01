@@ -1,6 +1,11 @@
 <template>
   <v-container>
-    <h3>Courses</h3>
+    <h1>Courses</h1>
+    <v-row>
+      <v-col cols="2">
+
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
