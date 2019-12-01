@@ -1,16 +1,16 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import About from './views/About.vue'
 import auth from './app/auth';
+import About from './views/About.vue';
+import Help from './components/HomeInterface/Help.vue';
+import Courses from './components/HomeInterface/Courses.vue';
+import Messages from './components/HomeInterface/Messages.vue';
 import LogoutSuccess from '@/components/LogoutSuccess';
 import UserInfoStore from './app/user-info-store';
 import UserInfoApi from './app/user-info-api';
 import ErrorComponent from '@/components/Error';
-Vue.use(Router),
-
-
-
+Vue.use(Router)
 
 function requireAuth(to, from, next) {
 
@@ -18,7 +18,7 @@ function requireAuth(to, from, next) {
     UserInfoStore.setLoggedIn(false);
     next({
       path: '/login',
-      query: { redirect: to.fullPath } 
+      query: { redirect: to.fullPath }
     });
   } else {
     UserInfoApi.getUserInfo().then(response => {
@@ -31,40 +31,47 @@ function requireAuth(to, from, next) {
 }
 
 export default new Router({
-    mode: 'history',
-    base: '/',
-    routes: [
-      {
-        path: '/',
-        name: 'Home',
-        component: Home,
-        // beforeEnter: requireAuth
-      },
-      {
-        path: '/login', beforeEnter(to, from, next) {
-          auth.auth.getSession();
-        }
-      },
-      {
-        path: '/login/oauth2/code/cognito', beforeEnter(to, from, next) {
-          var currUrl = window.location.href;
+  mode: 'history',
+  base: '/',
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home,
 
-          // console.log(currUrl);
-          auth.auth.parseCognitoWebResponse(currUrl);
-          // next();
-        }
-      },
-      {
-        path: '/logout', component: LogoutSuccess, beforeEnter(to, from, next) {
-          auth.logout();
-          next();
-        }
+      children: [
+        { path: '/courses', name: 'Courses', component: Courses, beforeEnter: requireAuth, },
+        { path: '/messages', name: 'Messages', component: Messages, beforeEnter: requireAuth, },
+        { path: '/about', name: 'About', component: About, beforeEnter: requireAuth, },
+        { path: '/help', name: 'Help', component: Help, beforeEnter: requireAuth, },
+      ],
+      beforeEnter: requireAuth,
+    },
+    {
+      path: '/login', beforeEnter(to, from, next) {
+        auth.auth.getSession();
+      }
+    },
+    {
+      path: '/login/oauth2/code/cognito', beforeEnter(to, from, next) {
+        var currUrl = window.location.href;
 
-      },
-      {
-        path: '/error',
-        component: ErrorComponent
-      },
-    ],
-  
+        // console.log(currUrl);
+        auth.auth.parseCognitoWebResponse(currUrl);
+        next();
+      }
+    },
+    {
+      path: '/logout', component: LogoutSuccess, beforeEnter(to, from, next) {
+        auth.logout();
+        next();
+      }
+
+    },
+    {
+      path: '/error',
+      component: ErrorComponent
+    },
+  ],
+
 })
