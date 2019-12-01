@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h3 class="text-uppercase">This is the help page!</h3>
+    <h3 class="text-uppercase">This is the help page view!</h3>
   </v-container>
 </template>
 
