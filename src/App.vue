@@ -17,7 +17,24 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-dialog v-model="dialog">
+                 <template v-slot:activator="{ on }">
+                <v-btn text v-on="on">{{item.title}}</v-btn>
+              </template>
+                <v-card>
+                <v-card-title class="headline black white--text" primary-title>{{item.title}}</v-card-title>
+
+                <v-card-text> 
+                  </v-card-text>
+
+                <v-divider></v-divider>
+
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="primary" text @click="dialog = false">Close</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -46,10 +63,11 @@ export default {
 
   data: function() {
     return {
+      dialog: false,
       userInfo: UserInfoStore.state.cognitoInfo,
       drawer: false,
       items: [
-        { title: "Home", icon: "mdi-home-city" },
+        { title: "Home", icon: "mdi-home-city"},
         { title: "My Account", icon: "mdi-account" },
         { title: "Users", icon: "mdi-account-group-outline" }
       ]
