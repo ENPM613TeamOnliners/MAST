@@ -3,12 +3,8 @@
     <v-app-bar app dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Modern Academic Security Training (MAST)</v-toolbar-title>
-
       <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+      {{userInfo.email}}
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute left temporary>
       <v-list-item-title class="pa-3">Username: {{userInfo.username}}</v-list-item-title>
@@ -43,6 +39,8 @@
 
 <script>
 import UserInfoStore from "@/app/user-info-store";
+import axios from 'axios';
+import UserInfoApi from "@/app/user-info-api";
 export default {
   name: "App",
 
@@ -56,7 +54,7 @@ export default {
         { title: "Users", icon: "mdi-account-group-outline" }
       ]
     };
-  }
+  },
 };
 </script>
 
