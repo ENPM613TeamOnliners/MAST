@@ -10,6 +10,12 @@
   </v-container>
 </template>
 
+<template>
+  <v-container>
+    <h3 class="text-lowercase">Testing 234!</h3>
+  </v-container>
+</template>
+
 <script>
 export default {
   name: "Help"
