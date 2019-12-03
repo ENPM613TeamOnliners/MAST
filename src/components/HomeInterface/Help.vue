@@ -7,7 +7,6 @@
     <a href="">How to view a course.</a>
     <br>
     <a href="">How to view your account.</a>
-
   </v-container>
 </template>
 

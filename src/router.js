@@ -43,7 +43,7 @@ export default new Router({
 
       children: [
         {
-          path: '/home', name: 'HomeContent', component: HomeContent,
+          path: '/', name: 'HomeContent', component: HomeContent,
         },
         {
           path: '/courses', name: 'Courses', component: Courses, beforeEnter: requireAuth,

@@ -9,7 +9,7 @@
 
 <script>
 import Landing from '../components/Landing.vue';
-import UserInfoStore from '../app/user-info-store';
+// import UserInfoStore from '../app/user-info-store';
 
 export default {
   name: 'Home',
@@ -18,10 +18,10 @@ export default {
     Landing,
   },
 
-  data() {
-    return {
-      userInfo: UserInfoStore.state.cognitoInfo,
-    };
-  },
+  // data() {
+  //   return {
+  //     userInfo: UserInfoStore.state.cognitoInfo,
+  //   };
+  // },
 };
 </script>

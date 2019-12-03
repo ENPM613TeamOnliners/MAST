@@ -100,12 +100,18 @@
         </v-list-item>
       </v-list>
     </v-row>
+      <br>
+    <uploadMaterial/>
   </v-container>
 </template>
 
 <script>
+import uploadMaterial from '@/components/HomeInterface/uploadMaterial.vue';
 export default {
   name: 'Courses',
+  components: {
+    uploadMaterial,
+  },
 
   data() {
     return {

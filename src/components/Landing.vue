@@ -63,6 +63,7 @@ export default {
     About,
     Help,
     HomeContent,
+    userInfo: {},
   },
 };
 </script>
