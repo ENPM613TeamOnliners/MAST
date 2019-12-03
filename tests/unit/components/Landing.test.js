@@ -1,6 +1,6 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
 import Vuetify from 'vuetify';
-import Landing from '@/components/Landing.vue';
+import Landing from '../components/Landing.vue';
 
 const localVue = createLocalVue();
 localVue.use(Vuetify);

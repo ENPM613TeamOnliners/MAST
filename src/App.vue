@@ -48,7 +48,7 @@
         </div>
       </template>
     </v-navigation-drawer>
-    <v-content>
+    <v-content>      
       <router-view />
     </v-content>
   </v-app>
