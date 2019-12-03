@@ -1,7 +1,9 @@
 <template>
 <div>
   <Landing />
-  <!-- {{userInfo}} -->
+  <!-- <template>
+      {{userInfo}}
+  </template> -->
   </div>
 </template>
 
@@ -16,10 +18,10 @@ export default {
     Landing,
   },
 
-   data: function() {
-        return{
-            userInfo: UserInfoStore.state.cognitoInfo
-        }
-    }
+  data() {
+    return {
+      userInfo: UserInfoStore.state.cognitoInfo,
+    };
+  },
 };
 </script>

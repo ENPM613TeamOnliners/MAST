@@ -81,7 +81,7 @@
               <v-card>
                 <v-card-title class="headline black white--text" primary-title>Course Description</v-card-title>
 
-                <v-card-text> Cybersecurity is a set of techniques to protect the secrecy, integrity, and 
+                <v-card-text> Cybersecurity is a set of techniques to protect the secrecy, integrity, and
                   availability of computer systems and data against threats. In today’s episode, we’re going to unpack these three goals and talk through some strategies we use like passwords, biometrics, and access privileges to keep our information as secure, but also as accessible as possible. From massive Denial of Service, or DDos attacks, to malware and brute force password cracking there are a lot of ways for hackers to gain access to your data, so we’ll also discuss some strategies like creating strong passwords, and using 2-factor authentication, to keep your information safe.
                   <h4>Registration Deadline: February 2, 2020</h4>
                   </v-card-text>
@@ -105,18 +105,17 @@
 
 <script>
 export default {
-  name: "Courses",
+  name: 'Courses',
 
   data() {
     return {
-      dialog: false
+      dialog: false,
     };
-   
   },
-   methods: {
-     enrollCourse(){
-       this.enrollCourse({path: "/"});
-     }
-    }
+  methods: {
+    enrollCourse() {
+      this.enrollCourse({ path: '/' });
+    },
+  },
 };
 </script>

@@ -1,6 +1,5 @@
 <template>
-  <v-window>
-    <v-window-item>
+<v-app>
       <v-card flat app>
         <v-tabs center-active dark>
           <v-tab to="/">Home</v-tab>
@@ -14,7 +13,9 @@
 
         <v-tab-item>
           <v-card flat>
-            <v-card-text>Home</v-card-text>
+            <v-card-text>
+              <HomeContent/>
+            </v-card-text>
           </v-card>
         </v-tab-item>
 
@@ -49,18 +50,19 @@
           </v-card>
         </v-tab-item>
       </v-card>
-    </v-window-item>
-  </v-window>
+</v-app>
 </template>
 
 <script>
-import About from "@/views/About.vue";
-import Help from "@/components/HomeInterface/Help.vue";
+import About from '@/views/About.vue';
+import Help from '@/components/HomeInterface/Help.vue';
+import HomeContent from '@/components/HomeInterface/HomeContent.vue';
 export default {
-  name: "Landing",
+  name: 'Landing',
   components: {
     About,
-    Help
-  }
+    Help,
+    HomeContent,
+  },
 };
 </script>

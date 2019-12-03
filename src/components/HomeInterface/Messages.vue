@@ -4,7 +4,6 @@
 
 <script>
 export default {
-  name: "Messages"
+  name: 'Messages',
 };
 </script>
-

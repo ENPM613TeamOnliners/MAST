@@ -3,14 +3,14 @@
 </template>
 <script>
 export default {
-  name: "Error",
-  data: function() {
+  name: 'Error',
+  data() {
     return {
-      message: ""
+      message: '',
     };
   },
   mounted() {
     this.message = this.$route.query.message;
-  }
+  },
 };
 </script>

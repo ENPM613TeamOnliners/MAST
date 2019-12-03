@@ -24,7 +24,7 @@
                 <v-card>
                 <v-card-title class="headline black white--text" primary-title>{{item.title}}</v-card-title>
 
-                <v-card-text> 
+                <v-card-text>
                   </v-card-text>
 
                 <v-divider></v-divider>
@@ -55,24 +55,24 @@
 </template>
 
 <script>
-import UserInfoStore from "@/app/user-info-store";
 import axios from 'axios';
-import UserInfoApi from "@/app/user-info-api";
-export default {
-  name: "App",
+import UserInfoStore from '@/app/user-info-store';
+import UserInfoApi from '@/app/user-info-api';
 
-  data: function() {
+export default {
+  name: 'App',
+
+  data() {
     return {
       dialog: false,
       userInfo: UserInfoStore.state.cognitoInfo,
       drawer: false,
       items: [
-        { title: "Home", icon: "mdi-home-city"},
-        { title: "My Account", icon: "mdi-account" },
-        { title: "Users", icon: "mdi-account-group-outline" }
-      ]
+        { title: 'Home', icon: 'mdi-home-city' },
+        { title: 'My Account', icon: 'mdi-account' },
+        { title: 'Users', icon: 'mdi-account-group-outline' },
+      ],
     };
   },
 };
 </script>
-
