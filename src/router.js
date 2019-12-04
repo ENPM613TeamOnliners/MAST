@@ -14,8 +14,6 @@ import ErrorComponent from '@/components/Error';
 
 Vue.use(Router);
 
-Vue.use(Router);
-
 function requireAuth(to, from, next) {
   if (!auth.auth.isUserSignedIn()) {
     UserInfoStore.setLoggedIn(false);
