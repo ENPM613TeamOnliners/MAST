@@ -5,7 +5,7 @@ import auth from './app/auth';
 import About from './views/About.vue';
 import Help from './components/HomeInterface/Help.vue';
 import Courses from './components/HomeInterface/Courses.vue';
-import Messages from './components/HomeInterface/Messages.vue';
+import searchBar from './components/HomeInterface/searchBar.vue';
 import LogoutSuccess from '@/components/LogoutSuccess';
 import UserInfoStore from './app/user-info-store';
 import UserInfoApi from './app/user-info-api';
