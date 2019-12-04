@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
@@ -6,12 +5,11 @@ import auth from './app/auth';
 import About from './views/About.vue';
 import Help from './components/HomeInterface/Help.vue';
 import Courses from './components/HomeInterface/Courses.vue';
-import searchBar from './components/HomeInterface/searchBar.vue';
+import Messages from './components/HomeInterface/Messages.vue';
 import LogoutSuccess from '@/components/LogoutSuccess';
 import UserInfoStore from './app/user-info-store';
 import UserInfoApi from './app/user-info-api';
 import ErrorComponent from '@/components/Error';
-
 Vue.use(Router);
 
 function requireAuth(to, from, next) {
