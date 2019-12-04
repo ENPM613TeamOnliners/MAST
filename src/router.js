@@ -40,7 +40,7 @@ export default new Router({
 
       children: [
         {
-          path: '/', name: 'HomeContent', component: HomeContent,
+          path: '/', name: 'HomeContent', component: HomeContent, beforeEnter: requireAuth,
         },
         {
           path: '/courses', name: 'Courses', component: Courses, beforeEnter: requireAuth,
