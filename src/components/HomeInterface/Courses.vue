@@ -1,7 +1,6 @@
 <template>
   <v-container app>
     <h1>Courses</h1>
-       <searchBar/>
     <v-spacer></v-spacer>
     <v-row>
       <v-list wrap>
@@ -109,12 +108,11 @@
 
 <script>
 import uploadMaterial from '@/components/HomeInterface/uploadMaterial.vue';
-import searchBar from '@/components/HomeInterface/searchBar.vue';
+
 export default {
   name: 'Courses',
   components: {
     uploadMaterial,
-    searchBar,
   },
 
   data() {

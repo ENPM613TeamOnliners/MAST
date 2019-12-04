@@ -15,7 +15,7 @@
           <v-spacer></v-spacer>
           <v-dialog v-model="dialog" max-width="500px">
             <template v-slot:activator="{ on }">
-              <v-btn color="primary" dark class="mb-2" v-on="on">Modify Assignments</v-btn>
+              <v-btn color="primary" dark class="mb-2" v-on="on">Create Assignments</v-btn>
             </template>
             <v-card>
               <v-card-title>
@@ -48,8 +48,12 @@
         </v-toolbar>
       </template>
       <template v-slot:item.action="{ item }">
-        <v-btn small class="mr-2" @click="editItem(item)">edit</v-btn>
-        <v-btn small @click="deleteItem(item)">delete</v-btn>
+        <v-btn small class="mr-2" @click="editItem(item)">
+          <v-icon>mdi-pencil</v-icon>edit
+        </v-btn>
+        <v-btn small @click="deleteItem(item)">
+          <v-icon>mdi-delete</v-icon>delete
+        </v-btn>
       </template>
       <template v-slot:no-data>
         <v-btn color="primary" @click="initialize">Reset</v-btn>
@@ -59,51 +63,50 @@
 </template>
 
 <script>
-import UserInfoStore from "@/app/user-info-store";
+import UserInfoStore from '@/app/user-info-store';
 
 export default {
-  name: "HomeContent",
-  components: {
-  },
+  name: 'HomeContent',
+  components: {},
   data() {
     return {
       userInfo: UserInfoStore.state.cognitoInfo,
       dialog: false,
       headers: [
         {
-          text: "Assignment Name",
-          align: "left",
+          text: 'Assignment Name',
+          align: 'left',
           sortable: false,
-          value: "name"
+          value: 'name',
         },
-        { text: "Due dates", value: "duedates" },
-        { text: "Grades", value: "grades" },
-        { text: "Actions", value: "action", sortable: false }
+        { text: 'Due dates', value: 'duedates' },
+        { text: 'Grades', value: 'grades' },
+        { text: 'Actions', value: 'action', sortable: false },
       ],
       assignments: [],
       editedIndex: -1,
       editedItem: {
-        name: "",
+        name: '',
         duedates: 0,
         grades: 0,
       },
       defaultItem: {
-        name: "",
+        name: '',
         duedates: 0,
         grades: 0,
-      }
+      },
     };
   },
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
-    }
+      return this.editedIndex === -1 ? 'New Assignment' : 'Edit Item';
+    },
   },
 
   watch: {
     dialog(val) {
       val || this.close();
-    }
+    },
   },
 
   created() {
@@ -114,28 +117,28 @@ export default {
     initialize() {
       this.assignments = [
         {
-          name: "Assignment 1",
-          duedates: "12/04/2025",
+          name: 'Assignment 1',
+          duedates: '12/04/2025',
           grades: 6.0,
         },
         {
-          name: "Assignment 2",
-          duedates: "12/11/2025",
+          name: 'Assignment 2',
+          duedates: '12/11/2025',
           grades: 9.0,
         },
         {
-          name: "Assignment 3",
-          duedates: "01/01/2026",
+          name: 'Assignment 3',
+          duedates: '01/01/2026',
           grades: 16.0,
         },
         {
-          name: "Assignment 4",
-          duedates: "01/27/2026",
+          name: 'Assignment 4',
+          duedates: '01/27/2026',
           grades: 3.7,
         },
         {
-          name: "Assignment 5",
-          duedates: "02/14/2026",
+          name: 'Assignment 5',
+          duedates: '02/14/2026',
           grades: 16.0,
         },
       ];
@@ -143,20 +146,20 @@ export default {
 
     editItem(item) {
       this.editedIndex = this.assignments.indexOf(item);
-      this.editedItem = Object.assign({}, item);
+      this.editedItem = { ...item };
       this.dialog = true;
     },
 
     deleteItem(item) {
       const index = this.assignments.indexOf(item);
-      confirm("Are you sure you want to delete this item?") &&
-        this.assignments.splice(index, 1);
+      confirm('Are you sure you want to delete this item?')
+        && this.assignments.splice(index, 1);
     },
 
     close() {
       this.dialog = false;
       setTimeout(() => {
-        this.editedItem = Object.assign({}, this.defaultItem);
+        this.editedItem = { ...this.defaultItem };
         this.editedIndex = -1;
       }, 300);
     },
@@ -168,7 +171,7 @@ export default {
         this.assignments.push(this.editedItem);
       }
       this.close();
-    }
-  }
+    },
+  },
 };
 </script>

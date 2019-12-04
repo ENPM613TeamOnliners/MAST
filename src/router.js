@@ -7,7 +7,7 @@ import auth from './app/auth';
 import About from './views/About.vue';
 import Help from './components/HomeInterface/Help.vue';
 import Courses from './components/HomeInterface/Courses.vue';
-import Messages from './components/HomeInterface/Messages.vue';
+import searchBar from './components/HomeInterface/searchBar.vue';
 import LogoutSuccess from '@/components/LogoutSuccess.vue';
 import UserInfoStore from './app/user-info-store';
 import UserInfoApi from './app/user-info-api';
@@ -49,7 +49,7 @@ export default new Router({
           path: '/courses', name: 'Courses', component: Courses, beforeEnter: requireAuth,
         },
         {
-          path: '/messages', name: 'Messages', component: Messages, beforeEnter: requireAuth,
+          path: '/searchBar', name: 'searchBar', component: searchBar, beforeEnter: requireAuth,
         },
         {
           path: '/about', name: 'About', component: About, beforeEnter: requireAuth,

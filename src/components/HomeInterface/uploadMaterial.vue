@@ -27,15 +27,15 @@
 </template>
 
 <script>
-  export default {
-      name: "uploadMaterial",
-    data: () => ({
-      files: [],
-    }),
-    methods:{
-        handleFileUpload(){
-            this.file = this.$refs.file.files[0];
-        },
+export default {
+  name: 'uploadMaterial',
+  data: () => ({
+    files: [],
+  }),
+  methods: {
+    handleFileUpload() {
+      this.file = this.$refs.file.files[0];
     },
-  }
+  },
+};
 </script>

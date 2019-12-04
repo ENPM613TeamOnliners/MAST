@@ -23,7 +23,7 @@
               </template>
                 <v-card>
                 <v-card-title class="headline black white--text" primary-title>{{item.title}}</v-card-title>
-
+<Account/>
                 <v-card-text>
                   </v-card-text>
 
@@ -48,7 +48,7 @@
         </div>
       </template>
     </v-navigation-drawer>
-    <v-content>      
+    <v-content>
       <router-view />
     </v-content>
   </v-app>
@@ -58,9 +58,13 @@
 import axios from 'axios';
 import UserInfoStore from '@/app/user-info-store';
 import UserInfoApi from '@/app/user-info-api';
+import Account from '@/components/HomeInterface/Account.vue'
 
 export default {
   name: 'App',
+  components: {
+    Account,
+  },
 
   data() {
     return {
@@ -68,9 +72,7 @@ export default {
       userInfo: UserInfoStore.state.cognitoInfo,
       drawer: false,
       items: [
-        { title: 'Home', icon: 'mdi-home-city' },
-        { title: 'My Account', icon: 'mdi-account' },
-        { title: 'Users', icon: 'mdi-account-group-outline' },
+        { title: 'My Account', icon: 'mdi-account', component: Account },
       ],
     };
   },
