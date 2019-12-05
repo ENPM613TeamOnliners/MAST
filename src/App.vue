@@ -7,7 +7,7 @@
       {{userInfo.email}}
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute left temporary>
-      <v-list-item-title class="pa-3">Username: {{userInfo.username}}</v-list-item-title>
+      <!-- <v-list-item-title class="pa-3">Username: {{userInfo.username}}</v-list-item-title> -->
       <v-divider></v-divider>
 
       <v-list dense>
