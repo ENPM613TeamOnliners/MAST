@@ -9,8 +9,7 @@
           <v-tab to="/about">About</v-tab>
         </v-tabs>
         <!-- Tab content -->
-        <router-view></router-view>
-
+        <router-view>
         <v-tab-item>
           <v-card flat>
             <v-card-text>
@@ -49,6 +48,7 @@
             </v-card-text>
           </v-card>
         </v-tab-item>
+        </router-view>
       </v-card>
 </v-app>
 </template>

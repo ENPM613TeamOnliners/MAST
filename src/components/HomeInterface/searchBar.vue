@@ -9,19 +9,19 @@
           <v-list>
             <v-list-group v-for="course in filteredCourses" :key="course.name">
               <template v-slot:activator>
-                <v-list-tile>
-                  <v-list-tile-content>
+                <v-list>
+                  <v-list-item-content>
                     <v-icon>mdi-book</v-icon>
-                    <v-list-tile-title>{{ course.name }}</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
+                    <v-list-item-title>{{ course.name }}</v-list-item-title>
+                  </v-list-item-content>
+                </v-list>
               </template>
               <v-divider pa-3></v-divider>
-              <v-list-tile>
-                <v-list-tile-content class="pa-3">{{course.desc}}</v-list-tile-content>
+              <v-list>
+                <v-list-item-content class="pa-3">{{course.desc}}</v-list-item-content>
                 <br>
                 <v-btn>Enroll</v-btn>
-              </v-list-tile>
+              </v-list>
             </v-list-group>
           </v-list>
         </span>

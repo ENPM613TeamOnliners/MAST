@@ -4,7 +4,14 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Modern Academic Security Training (MAST)</v-toolbar-title>
       <v-spacer></v-spacer>
-      {{userInfo.email}}
+
+
+          <v-btn outlined to="/logout">
+            Logout
+            <!-- <router-link to="/logout" block>Logout</router-link> -->
+            <v-icon>mdi-logout</v-icon>
+          </v-btn>
+
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" absolute left temporary>
       <!-- <v-list-item-title class="pa-3">Username: {{userInfo.username}}</v-list-item-title> -->
@@ -38,18 +45,12 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      <template v-slot:append>
-        <div class="pa-2">
-          <v-btn outlined to="/logout">
-            Logout
-            <!-- <router-link to="/logout" block>Logout</router-link> -->
-            <v-icon>mdi-logout</v-icon>
-          </v-btn>
-        </div>
-      </template>
     </v-navigation-drawer>
-    <v-content>
+    <v-content app>
+
+
       <router-view />
+
     </v-content>
   </v-app>
 </template>
@@ -70,7 +71,7 @@ export default {
     return {
       dialog: false,
       userInfo: UserInfoStore.state.cognitoInfo,
-      drawer: false,
+      drawer: null,
       items: [
         { title: 'My Account', icon: 'mdi-account', component: Account },
       ],
