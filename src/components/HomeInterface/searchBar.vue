@@ -18,7 +18,9 @@
               </template>
               <v-divider pa-3></v-divider>
               <v-list-tile>
-                <v-list-tile-content>{{course.desc}}</v-list-tile-content>
+                <v-list-tile-content class="pa-3">{{course.desc}}</v-list-tile-content>
+                <br>
+                <v-btn>Enroll</v-btn>
               </v-list-tile>
             </v-list-group>
           </v-list>
