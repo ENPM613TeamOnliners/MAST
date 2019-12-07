@@ -12,7 +12,7 @@
         <v-card flat>
           <v-card-text>
             <p>
-              Name: 
+              Name:
             </p>
 
             <p>
@@ -60,11 +60,11 @@
 
 <script>
 export default {
-    name: 'Account',
-    data(){
-      return{
+  name: 'Account',
+  data() {
+    return {
 
-      }
-    }
-}
+    };
+  },
+};
 </script>

@@ -26,6 +26,9 @@
                 <v-container>
                   <v-row>
                     <v-col cols="12" sm="6" md="4">
+                      <v-text-field v-model="editedItem.student" label="Student Name"></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="4">
                       <v-text-field v-model="editedItem.name" label="Assignment name"></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
@@ -63,50 +66,56 @@
 </template>
 
 <script>
-import UserInfoStore from '@/app/user-info-store';
+import UserInfoStore from "@/app/user-info-store";
 
 export default {
-  name: 'HomeContent',
+  name: "HomeContent",
   components: {},
   data() {
     return {
       userInfo: UserInfoStore.state.cognitoInfo,
       dialog: false,
       headers: [
-        {
-          text: 'Assignment Name',
-          align: 'left',
+        { text: "Student Name", 
+        align: "left",
           sortable: false,
-          value: 'name',
+          value: "name"},
+        {
+          text: "Assignment Name",
+          align: "left",
+          sortable: false,
+          value: "name"
         },
-        { text: 'Due dates', value: 'duedates' },
-        { text: 'Grades', value: 'grades' },
-        { text: 'Actions', value: 'action', sortable: false },
+        { text: "Due dates", value: "duedates" },
+        { text: "Grades", value: "grades" },
+        { text: "Actions", value: "action", sortable: false }
       ],
       assignments: [],
       editedIndex: -1,
       editedItem: {
-        name: '',
+        student: "",
+        name: "",
         duedates: 0,
-        grades: 0,
+        grades: 0
       },
       defaultItem: {
-        name: '',
+        student: "",
+        name: "",
         duedates: 0,
-        grades: 0,
-      },
+        grades: 0
+      }
     };
   },
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? 'New Assignment' : 'Edit Item';
-    },
+      return this.editedIndex === -1 ? "New Assignment" : "Edit Item";
+    }
   },
 
   watch: {
     dialog(val) {
       val || this.close();
-    },
+    }
   },
 
   created() {
@@ -117,30 +126,35 @@ export default {
     initialize() {
       this.assignments = [
         {
-          name: 'Assignment 1',
-          duedates: '12/04/2025',
-          grades: 6.0,
+          student: "John Doe",
+          name: "Assignment 1",
+          duedates: "12/04/2025",
+          grades: 6.0
         },
         {
-          name: 'Assignment 2',
-          duedates: '12/11/2025',
-          grades: 9.0,
+          student: "Harry Potter",
+          name: "Assignment 2",
+          duedates: "12/11/2025",
+          grades: 9.0
         },
         {
-          name: 'Assignment 3',
-          duedates: '01/01/2026',
-          grades: 16.0,
+          student: "Luke Skywalker",
+          name: "Assignment 3",
+          duedates: "01/01/2026",
+          grades: 16.0
         },
         {
-          name: 'Assignment 4',
-          duedates: '01/27/2026',
-          grades: 3.7,
+          student: "Student",
+          name: "Assignment 4",
+          duedates: "01/27/2026",
+          grades: 3.7
         },
         {
-          name: 'Assignment 5',
-          duedates: '02/14/2026',
-          grades: 16.0,
-        },
+          student: "Cyber Student",
+          name: "Assignment 5",
+          duedates: "02/14/2026",
+          grades: 16.0
+        }
       ];
     },
 
@@ -152,8 +166,8 @@ export default {
 
     deleteItem(item) {
       const index = this.assignments.indexOf(item);
-      confirm('Are you sure you want to delete this item?')
-        && this.assignments.splice(index, 1);
+      confirm("Are you sure you want to delete this item?") &&
+        this.assignments.splice(index, 1);
     },
 
     close() {
@@ -171,7 +185,7 @@ export default {
         this.assignments.push(this.editedItem);
       }
       this.close();
-    },
-  },
+    }
+  }
 };
 </script>

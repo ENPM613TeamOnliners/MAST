@@ -18,11 +18,13 @@
     </ol>
     <br>
     <b>How to view your account.</b>
-    <ol> 
+    <ol>
       <li>Sign in to your MAST account.</li>
       <li>Click <v-icon>mdi-menu</v-icon></li>
       <li>Select <b>My Account.</b></li>
     </ol>
+    <br>
+     <a href="\assets\UserManual.pdf" download>User Manual</a>
     <br>
     <b>For any other comments, questions, or concerns, please contact your MAST helpdesk.</b>
   </v-container>

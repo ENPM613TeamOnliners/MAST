@@ -32,35 +32,33 @@
 
 <script>
 export default {
-  name: "searchBar",
-  data: function() {
+  name: 'searchBar',
+  data() {
     return {
-      search: "",
+      search: '',
       courses: [
         {
-          courseid: "1",
-          name: "Introduction to CyberSecurity",
+          courseid: '1',
+          name: 'Introduction to CyberSecurity',
           desc:
-            "Cybersecurity is a set of techniques to protect the secrecy, integrity, and availability of computer systems and data against threats. In today’s episode, we’re going to unpack these three goals and talk through some strategies we use like passwords, biometrics, and access privileges to keep our information as secure, but also as accessible as possible. From massive Denial of Service, or DDos attacks, to malware and brute force password cracking there are a lot of ways for hackers to gain access to your data, so we’ll also discuss some strategies like creating strong passwords, and using 2-factor authentication, to keep your information safe."
+            'Cybersecurity is a set of techniques to protect the secrecy, integrity, and availability of computer systems and data against threats. In today’s episode, we’re going to unpack these three goals and talk through some strategies we use like passwords, biometrics, and access privileges to keep our information as secure, but also as accessible as possible. From massive Denial of Service, or DDos attacks, to malware and brute force password cracking there are a lot of ways for hackers to gain access to your data, so we’ll also discuss some strategies like creating strong passwords, and using 2-factor authentication, to keep your information safe.',
         },
         {
-          courseid: "2",
-          name: "Cybersecurity: Crash Course Computer",
+          courseid: '2',
+          name: 'Cybersecurity: Crash Course Computer',
           desc:
-            "IT security is a growing field. Learn what it's really like to be in security, the tools that keep organizations safe, and the path to entering this growing field. What are Intro to IT courses? https://cbt.gg/2Hy2Qey We all have to start somewhere. Intro to IT courses allow aspiring and seasoned IT pros alike to explore the different corners of the IT career field. These free, open courses are taught at a level anyone can understand by the same great CBT Nuggets trainers. Step 1: Watch this entire course. If you watch the course, then the quiz will be a breeze. Step 2: Test your knowledge with the 7-question Intro to Cybersecurity quiz. Good luck! https://cbt.gg/2DyZeFg"
-        }
-      ]
+            "IT security is a growing field. Learn what it's really like to be in security, the tools that keep organizations safe, and the path to entering this growing field. What are Intro to IT courses? https://cbt.gg/2Hy2Qey We all have to start somewhere. Intro to IT courses allow aspiring and seasoned IT pros alike to explore the different corners of the IT career field. These free, open courses are taught at a level anyone can understand by the same great CBT Nuggets trainers. Step 1: Watch this entire course. If you watch the course, then the quiz will be a breeze. Step 2: Test your knowledge with the 7-question Intro to Cybersecurity quiz. Good luck! https://cbt.gg/2DyZeFg",
+        },
+      ],
     };
   },
   computed: {
-    filteredCourses: function() {
-      var self = this;
-      return this.courses.filter(function(cust) {
-        return cust.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0;
-      });
-      //return this.courses;
-    }
-  }
+    filteredCourses() {
+      const self = this;
+      return this.courses.filter((cust) => cust.name.toLowerCase().indexOf(self.search.toLowerCase()) >= 0);
+      // return this.courses;
+    },
+  },
 };
 </script>
 

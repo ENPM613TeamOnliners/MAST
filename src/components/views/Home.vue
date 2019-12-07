@@ -1,0 +1,27 @@
+<template>
+<div>
+  <Landing />
+  <!-- <template>
+      {{userInfo}}
+  </template> -->
+  </div>
+</template>
+
+<script>
+import Landing from '@/components/Landing.vue';
+// import UserInfoStore from '../app/user-info-store';
+
+export default {
+  name: 'Home',
+
+  components: {
+    Landing,
+  },
+
+  // data() {
+  //   return {
+  //     userInfo: UserInfoStore.state.cognitoInfo,
+  //   };
+  // },
+};
+</script>

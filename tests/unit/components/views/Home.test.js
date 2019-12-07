@@ -1,7 +1,8 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
 
 import Vuetify from 'vuetify';
-import Home from '@/components/views/Home.vue';
+import Home from '@\components\views\Home.vue';
+
 
 const localVue = createLocalVue();
 localVue.use(Vuetify);

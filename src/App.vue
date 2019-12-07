@@ -5,7 +5,6 @@
       <v-toolbar-title>Modern Academic Security Training (MAST)</v-toolbar-title>
       <v-spacer></v-spacer>
 
-
           <v-btn outlined to="/logout">
             Logout
             <!-- <router-link to="/logout" block>Logout</router-link> -->
@@ -16,7 +15,6 @@
     <v-navigation-drawer v-model="drawer" absolute left temporary>
       <!-- <v-list-item-title class="pa-3">Username: {{userInfo.username}}</v-list-item-title> -->
       <v-divider></v-divider>
-
       <v-list dense>
         <v-list-item v-for="item in items" :key="item.title" link>
           <v-list-item-icon>
@@ -59,19 +57,20 @@
 import axios from 'axios';
 import UserInfoStore from '@/app/user-info-store';
 import UserInfoApi from '@/app/user-info-api';
-import Account from '@/components/HomeInterface/Account.vue'
+import Account from '@/components/HomeInterface/Account.vue';
 
 export default {
   name: 'App',
   components: {
     Account,
+    UserInfoStore,
   },
 
   data() {
     return {
       dialog: false,
       userInfo: UserInfoStore.state.cognitoInfo,
-      drawer: null,
+      drawer: false,
       items: [
         { title: 'My Account', icon: 'mdi-account', component: Account },
       ],
