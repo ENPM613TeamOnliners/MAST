@@ -79,7 +79,7 @@ export default {
         { text: "Student Name", 
         align: "left",
           sortable: false,
-          value: "name"},
+          value: "student"},
         {
           text: "Assignment Name",
           align: "left",
